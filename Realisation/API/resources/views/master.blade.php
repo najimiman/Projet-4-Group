@@ -13,6 +13,7 @@
 @yield('AddTask') 
 @yield('editTask')
 
+
   <!-- /.content-wrapper -->
 @include('layouts/footer')
 

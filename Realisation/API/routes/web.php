@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PreparationBriefController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PreparationTacheController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -26,4 +27,5 @@ route::get('/filter_bief',[PreparationTacheController::class,'filter_bief'])->na
 route::get('/searchtache',[PreparationTacheController::class,'search_tache'])->name('searchtache');
 route::get('/generatepdf',[PreparationTacheController::class,'generatepdf'])->name('generate');
 
+Route::resource('brief', PreparationBriefController::class);
 });

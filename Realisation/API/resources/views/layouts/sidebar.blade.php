@@ -34,6 +34,14 @@
               {{-- <i class="fas fa-angle-left right"></i> --}}
             </p>
           </a>
+          <a href="{{route('brief.index')}}" class="nav-link active">
+            <i class="nav-icon fas fa-table"></i>
+            <p>
+              {{-- {{__('message.btn_taskManag')}} --}}
+              Brief
+              {{-- <i class="fas fa-angle-left right"></i> --}}
+            </p>
+          </a>
 
 
       </ul>
