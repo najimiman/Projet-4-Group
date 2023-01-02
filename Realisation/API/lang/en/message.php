@@ -1,9 +1,13 @@
 <?php
 return[
     'btn_taskManag'=>'Task management',
+    'btn_apprenant'=>'Learner management',
     'title'=>'Task management',
+    'title1'=>'Learner management',
     'task'=>'Task list',
+    'apprenant'=>'Learner List',
     '+add task'=>'Add task',
+    '+add apprenant'=>'add learner',
     'all_briefs'=>'All briefs',
     'name'=>'Name',
     'description'=>'Description',
@@ -23,7 +27,9 @@ return[
     'add'=>'Add',
     'pdf_title'=>'Liste des tâches',
     'brief'=>'brief',
-    'edit_task'=>'Edit Tasks'
+    'edit_task'=>'Edit Tasks',
+    'prenom'=>'first name',
+    'image'=>'image'
 
 ]
 

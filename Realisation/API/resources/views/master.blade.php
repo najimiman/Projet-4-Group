@@ -13,6 +13,9 @@
 @yield('AddTask') 
 @yield('editTask')
 
+@yield('create')
+@yield('edit')
+@yield('index')
   <!-- /.content-wrapper -->
 @include('layouts/footer')
 

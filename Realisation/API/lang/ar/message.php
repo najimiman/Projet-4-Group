@@ -1,9 +1,13 @@
 <?php
 return[
     'btn_taskManag'=>'ادارة المهام',
+    'btn_taskManag'=>'إدارة المتعلم',
     'title'=>'ادارة المهام',
+    'title1'=>'إدارة المتعلم',
     'task'=>'قائمة المهام ',
+    'apprenant'=>'قائمة المتعلمين',
     '+add task'=>'إضافة مهمة',
+    '+add apprenant'=>'إضافة متعلم',
     'all_briefs'=>' جميع المشاريع',
     'name'=>'اسم',
     'description'=>'وصف',
@@ -23,7 +27,9 @@ return[
     'add'=>'أضف',
     'pdf_title'=>'عنوان PDF',
     'brief'=>'مشروع',
-    'edit_task'=>' تعديل المهمة'
+    'edit_task'=>' تعديل المهمة',
+    'prenom'=>'الاسم الأول',
+    'image'=>'الصورة'
 
 
 ]
