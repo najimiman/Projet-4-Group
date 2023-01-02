@@ -17,7 +17,7 @@
                 <form class="card" action="{{ route('brief.update',$edit->id) }}" method="POST">
                     @method('PUT')
                     @csrf
-                  <h5 class="card-title d-flex justify-content-center fw-400">{{__('message.edit_task')}}</h5>
+                  <h5 class="card-title d-flex justify-content-center fw-400">{{__('message.edit_brief')}}</h5>
                         <div class="card-body">
                             <div class="form-group">
                                 <label class="text-muted" for="">{{__('message.name')}}</label>
