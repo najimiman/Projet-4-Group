@@ -22,12 +22,13 @@ return[
     'select_brief'=>'sélectionner brief',
     'add'=>'Ajouter',
     'pdf_title'=>'To do-list',
-    'brief'=>'brief',
-    'edit_task'=>'Modifier les tâches'
-
-
-
-
+    'brief'=>'Liste de brief',
+    'edit_task'=>'Modifier les tâches',
+    'edit_brief'=>'Modifier les brief',
+    'add_brief'=>'Ajouter un brief',
+    'titleBrief'=>'Gestion des brief',
+    'profList' => 'liste des formateurs',
+    'allProfs' => 'tout les formateurs'
 ]
 
 ?>

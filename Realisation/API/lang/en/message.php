@@ -22,9 +22,14 @@ return[
     'select_brief'=>'select brief',
     'add'=>'Add',
     'pdf_title'=>'Liste des tâches',
-    'brief'=>'brief',
-    'edit_task'=>'Edit Tasks'
-
+    'brief'=>'brief list',
+    'edit_task'=>'Edit Tasks',
+    'edit_brief'=>'Edit Brief',
+    'brief'=>'brief list',
+    'add_brief'=>'Add Brief',
+    'titleBrief'=>'Brief management',
+    'profList' => 'List of professors',
+    'allProfs' => 'All professors'
 ]
 
 ?>

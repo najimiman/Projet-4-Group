@@ -27,18 +27,17 @@
              with font-awesome or any other icon font library -->
 
         {{-- <li class="nav-item menu-open"> --}}
-          <a href="/" class="nav-link active">
+          <a href="/" class="nav-link active m">
             <i class="nav-icon fas fa-table"></i>
             <p>
               {{__('message.btn_taskManag')}}
               {{-- <i class="fas fa-angle-left right"></i> --}}
             </p>
           </a>
-          <a href="{{route('brief.index')}}" class="nav-link active">
+          <a href="{{route('brief.index')}}" class="nav-link active m">
             <i class="nav-icon fas fa-table"></i>
             <p>
-              {{-- {{__('message.btn_taskManag')}} --}}
-              Brief
+              {{__('message.titleBrief')}}
               {{-- <i class="fas fa-angle-left right"></i> --}}
             </p>
           </a>

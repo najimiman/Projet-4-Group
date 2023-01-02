@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>{{(__('message.title'))}}</h1>
+            <h1>{{(__('message.titleBrief'))}}</h1>
         </div>
       </div>
     </section>
@@ -39,9 +39,9 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label class="text-muted" for="">{{__('message.brief')}}</label>
+                                <label class="text-muted" for="">{{ __('message.profList')}}</label>
                                 <select class="btn form-control rounded btn-secondary dropdown-toggle ml-2" name="Formateur_id" id="Preparation_brief_id">
-                                    <option value="{{$edit->Formateur_id}}">{{$edit->Formateur_id}}</option>
+                                    <option value="{{$edit->Formateur_id}}">{{ __('message.allProfs')}}</option>
                                     @foreach ($formateurs as $value)
                                     <option value="{{$value->id}}">{{$value->Nom_formateur}}</option>
                                     @endforeach

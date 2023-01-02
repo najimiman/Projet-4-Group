@@ -6,8 +6,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            {{-- <h1>{{__('message.title')}}</h1> --}}
-            Brief manager
+            <h1>{{__('message.titleBrief')}}</h1>
           </div>
         </div>
       </div>
@@ -18,14 +17,13 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-8">
-                        {{-- <h2>{{__('message.task')}}</h2> --}}
-                        Listes des brief 
+                        <h2>{{__('message.brief')}}</h2>
                     </div>
 
                 </div>
                 <div class="col-sm-12 d-flex justify-content-between p-3">
                     <div class="d-flex justify-content-between">
-                        <a href="{{ route('brief.create') }}" class="btn btn-primary">Ajouter brief</a>
+                        <a href="{{ route('brief.create') }}" class="btn btn-primary">{{__('message.add_brief')}}</a>
                     </div>
 
                     <div class="search-box">

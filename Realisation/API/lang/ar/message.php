@@ -22,9 +22,13 @@ return[
     'select_brief'=>' اختر مشروعا',
     'add'=>'أضف',
     'pdf_title'=>'عنوان PDF',
-    'brief'=>'مشروع',
-    'edit_task'=>' تعديل المهمة'
-
+    'brief'=>'قائمة المشاريع',
+    'edit_task'=>' تعديل المهمة',
+    'add_brief' => 'اضافة مشروع',
+    'edit_brief' => 'تعديل المشروع',
+    'titleBrief'=>'ادارة المشروع',
+    'profList' => 'قائمة الاساتذة',
+    'allProfs' => 'جميع الاساتذة'
 
 ]
 

@@ -5,15 +5,8 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            {{-- <h1>{{(__('message.title'))}}</h1> --}}
-            Ajouter brief
+            <h1>{{(__('message.titleBrief'))}}</h1>
           </div>
-          {{-- <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/">Tasks</a></li>
-
-            </ol>
-          </div> --}}
         </div>
       </div>
     </section>
@@ -25,7 +18,7 @@
     <div class="col-md-6 col-lg-6">
                 <form class="card" action="{{ route('brief.store') }}" method="POST">
                     @csrf
-                  <h5 class="card-title d-flex justify-content-center fw-400">{{__('message.add_task')}}</h5>
+                  <h5 class="card-title d-flex justify-content-center fw-400">{{__('message.add_brief')}}</h5>
               <div class="card-body">
                             <div class="form-group">
                                 <label class="text-muted" for="">{{__('message.name')}}</label>
@@ -47,9 +40,9 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label class="text-muted" for="">Formateur</label>
+                                <label class="text-muted" for="">{{ __('message.profList')}}</label>
                                 <select class="btn form-control rounded btn-secondary dropdown-toggle ml-2" name="Preparation_brief_id" id="Preparation_brief_id">
-                                    <option value="">Tout les Formateurs</option>
+                                    <option value="">{{ __('message.allProfs')}}</option>
                                     @foreach ($formateurs as $value)
                                     <option value="{{$value->id}}">{{$value->Nom_formateur}}</option>
                                     @endforeach
