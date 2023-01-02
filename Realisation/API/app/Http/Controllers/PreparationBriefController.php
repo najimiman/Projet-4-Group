@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\BriefImport;
 use App\Models\Formateur;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\PreparationBrief;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PreparationBriefController extends Controller
 {
@@ -17,28 +19,22 @@ class PreparationBriefController extends Controller
     public function index()
     {
         $briefs = PreparationBrief::all();
-      
-        $briefs_page =PreparationBrief::paginate(3);
-        
-        // $pagination = PreparationTache::paginate($tasks);
-
-        // $tasks =PreparationTache::count();
-        // dd($count);
+        $briefs_page =PreparationBrief::paginate(2);
         return view('preparationBrief.index',['briefs'=>$briefs,'briefs_page'=>$briefs_page]);
     }
 
 
     // public function filter_bief(Request $request){
-    //     $task=PreparationBrief::where('Preparation_brief_id','Like','%'.$request->filter.'%')->get();
+    //     $task=PreparationBrief::where('id','Like','%'.$request->filter.'%')->get();
     //     // $task =PreparationTache::paginate(3);
     //     return response(['dataTask'=>$task]);
     // }
 
-    // public function search_tache(Request $request){
-    //     $searchtask=PreparationBrief::where('Nom_tache','Like','%'.$request->searchtask.'%')->get();
-    //     return response(['search'=>$searchtask]);
+    public function search_brief(Request $request){
+        $searchbrief=PreparationBrief::where('Nom_du_brief','Like','%'.$request->searchbrief.'%')->get();
+        return response(['search'=>$searchbrief]);
 
-    // }
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -90,12 +86,12 @@ class PreparationBriefController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function edit($id)
-    // {
-    //     $edit=PreparationBrief::findOrFail($id);
-    //     // $brief=PreparationBrief::all();
-    //     // return view('tasks.edit',['edit'=>$edit,'brief'=>$brief]);
-    // }
+    public function edit($id)
+    {
+        $edit = PreparationBrief::findOrFail($id);
+        $formateurs = Formateur::all();
+        return view('preparationBrief.edit',['edit'=>$edit,'formateurs'=>$formateurs]);
+    }
 
     /**
      * Update the specified resource in storage.
@@ -104,22 +100,22 @@ class PreparationBriefController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function update(Request $request, $id)
-    // {
-    //     $request->validate([
-    //         'Nom_tache'=>'required|max:50',
-    //         'Duree'=>'required'
-    //     ]);
-    //     $update=PreparationBrief::findOrFail($id);
-    //     $update->Nom_tache=$request->get('Nom_tache');
-    //     $update->Description=$request->get('Description');
-    //     $update->Duree=$request->get('Duree');
-    //     $update->Preparation_brief_id=$request->get('Preparation_brief_id');
-    //     $update->save();
+        public function update(Request $request, $id)
+        {
+            $request->validate([
+                'Nom_du_brief'=>'required|max:50',
+                'Duree'=>'required'
+            ]);
+            $update=PreparationBrief::findOrFail($id);
+            $update->Nom_du_brief=$request->get('Nom_du_brief');
+            $update->Description=$request->get('Description');
+            $update->Duree=$request->get('Duree');
+            $update->Formateur_id=$request->get('Formateur_id');
+            $update->save();
 
 
-    //     return redirect('/task')->with('success');
-    // }
+            return redirect('/brief')->with('success');
+        }
 
     /**
      * Remove the specified resource from storage.
@@ -127,26 +123,26 @@ class PreparationBriefController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function destroy($id)
-    // {
-    //     $delete = PreparationBrief::findOrFail($id);
-    //     $delete->delete();
-    //     return redirect('/task');
-    // }
+    public function destroy($id)
+    {
+        $delete = PreparationBrief::findOrFail($id);
+        $delete->delete();
+        return back();
+    }
 
      // export data format excel
 
-    //  public function exportexcel(){
-    //     return Excel::download(new TaskExport,'datapage.xlsx');
-    // }
+     public function exportexcel(){
+        return Excel::download(new BriefImport,'datapage.xlsx');
+    }
 
-     // import data format excel
-    //  public function importexcel(Request $request){
+    //  import data format excel
+     public function importexcel(Request $request){
 
-    //     Excel::import(new TaskImport, $request->file);
-    //     return redirect()->back();
+        Excel::import(new BriefImport, $request->file);
+        return redirect()->back();
 
-    // }
+    }
 
     //  Export data form PDF
 

@@ -28,4 +28,9 @@ route::get('/searchtache',[PreparationTacheController::class,'search_tache'])->n
 route::get('/generatepdf',[PreparationTacheController::class,'generatepdf'])->name('generate');
 
 Route::resource('brief', PreparationBriefController::class);
+route::get('/generatepdf',[PreparationBriefController::class,'generatepdf'])->name('generate');
+Route::get('exportexcel',[PreparationBriefController::class,'exportexcel'])->name('exportexcel');
+Route::post('importexcel',[PreparationBriefController::class,'importexcel'])->name('importexcel');
+route::get('/searchbrief',[PreparationBriefController::class,'search_brief'])->name('searchbriefs');
+
 });

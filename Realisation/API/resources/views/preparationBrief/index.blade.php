@@ -26,15 +26,6 @@
                 <div class="col-sm-12 d-flex justify-content-between p-3">
                     <div class="d-flex justify-content-between">
                         <a href="{{ route('brief.create') }}" class="btn btn-primary">Ajouter brief</a>
-
-
-                        {{-- <select class="btn btn-secondary dropdown-toggle ml-2" name="filter" id="filter">
-                            <option value="">{{__('message.all_briefs')}}</option>
-                            @foreach ($briefs as $value)
-                            <option value="{{$value->id}}">{{$value->Nom_du_brief}}</option>
-                            @endforeach
-                        </select> --}}
-
                     </div>
 
                     <div class="search-box">
@@ -61,14 +52,14 @@
               <td>{{ $value->Description }}</td>
               <td>{{ $value->Duree }}</td>
               <td>
-                  {{-- <a  href="{{ route('task.edit', $value->id)}}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                  <form action="{{ route('task.destroy', $value->id)}}" method="post">
+                  <a  href="{{ route('brief.edit', $value->id)}}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                  <form action="{{ route('brief.destroy', $value->id)}}" method="post">
                       @csrf
                       @method('DELETE')
                       <button id="trash-icon">
                           <a  class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                       </button>
-                  </form> --}}
+                  </form>
               </td>
           </tr>
           @endforeach
@@ -78,19 +69,19 @@
 
 
 
-  <div class="d-flex justify-content-between">
-      <div class="d-flex justify-content-start">
-          {!! $briefs_page->links() !!}
-      </div>
-      {{-- <div>
+        <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-start">
+                {!! $briefs_page->links() !!}
+        </div>
+      <div>
           <a href="{{route('generate')}}" class="btn btn-outline-secondary" >{{__('message.export_pdf')}}</a>
           <a href="/exportexcel" class="btn btn-outline-secondary" >{{__('message.export_excel')}}</a>
           <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">
             {{__('message.import_excel')}}
             </button>
-       </div> --}}
+       </div>
 
-        {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -118,27 +109,28 @@
   </div>
 </div>
 </div>
-</div> --}}
+</div>
 
-{{-- <script type="text/javascript">
+<script type="text/javascript">
 
     $('#search').on('keyup',function(){
         $value=$(this).val();
         $.ajax({
             type:'get',
-            url:'{{route("searchtache")}}',
-            data:{'searchtask':$value},
+            url:'{{route("searchbriefs")}}',
+            data:{'searchbrief':$value},
             success:function(data){
                 console.log(data);
-                var task=data.search;
+                var brief=data.search;
                 var html='';
-                if(task.length>0){
-                    for(let i=0;i<task.length;i++){
+                if(brief.length>0){
+                    for(let i=0;i<brief.length;i++){
                         html+=`<tr>
-                                    <td>${task[i]['Nom_tache']}</td>
-                                    <td>${task[i]['Duree']}</td>
-                                    <td><a  href="/task/${task[i]['id']}/edit" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                    <form method="post" action="/task/${task[i]['id']}">
+                                    <td>${brief[i]['Nom_du_brief']}</td>
+                                    <td>${brief[i]['Description']}</td>
+                                    <td>${brief[i]['Duree']}</td>
+                                    <td><a  href="/brief/${brief[i]['id']}/edit" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                    <form method="post" action="/brief/${brief[i]['id']}">
                                         <input type="hidden" name="_method" value="Delete">\
                                         <input type="hidden" name="_token" value='{{ csrf_token() }}'>
                                         <button id="trash-icon" type='submit'>
@@ -149,7 +141,7 @@
                 }
                 else{
                     html+='<tr>\
-                    <td>no tache</td>\
+                    <td>no brief</td>\
                     </tr>';
                 }
                 $('#table1').html(html);
@@ -157,40 +149,40 @@
         })
     })
 
-    $('#filter').on('change',function(){
-          $value=$(this).val();
-          $.ajax({
-              type:'get',
-              url:'{{route("filter_bief")}}',
-              data:{'filter':$value},
-              success:function(data){
-                  console.log(data);
-                  var task=data.dataTask;
-                  var html='';
-                  if(task.length>0){
-                      for(let i=0;i<task.length;i++){
-                          html+=`<tr>
-                                      <td>${task[i]['Nom_tache']}</td>
-                                      <td>${task[i]['Duree']}</td>
-                                      <td><a  href="/task/${task[i]['id']}/edit" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                      <form method="post" action="/task/${task[i]['id']}">
-                                          <input type="hidden" name="_method" value="Delete">\
-                                          <input type="hidden" name="_token" value='{{ csrf_token() }}'>
-                                          <button id="trash-icon" type='submit'>
-                                      <a  class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                  </button></td>
-                                  </tr>`;
-                      }
-                  }
-                  else{
-                      html+=`<tr>\
-                      <td>no tache</td>\
-                      </tr>`;
-                  }
-                  $('#table1').html(html);
-              }
-          });
-      })
+    // $('#filter').on('change',function(){
+    //       $value=$(this).val();
+    //       $.ajax({
+    //           type:'get',
+    //           url:'{{route("filter_bief")}}',
+    //           data:{'filter':$value},
+    //           success:function(data){
+    //               console.log(data);
+    //               var task=data.dataTask;
+    //               var html='';
+    //               if(task.length>0){
+    //                   for(let i=0;i<task.length;i++){
+    //                       html+=`<tr>
+    //                                   <td>${task[i]['Nom_tache']}</td>
+    //                                   <td>${task[i]['Duree']}</td>
+    //                                   <td><a  href="/task/${task[i]['id']}/edit" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+    //                                   <form method="post" action="/task/${task[i]['id']}">
+    //                                       <input type="hidden" name="_method" value="Delete">\
+    //                                       <input type="hidden" name="_token" value='{{ csrf_token() }}'>
+    //                                       <button id="trash-icon" type='submit'>
+    //                                   <a  class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+    //                               </button></td>
+    //                               </tr>`;
+    //                   }
+    //               }
+    //               else{
+    //                   html+=`<tr>\
+    //                   <td>no tache</td>\
+    //                   </tr>`;
+    //               }
+    //               $('#table1').html(html);
+    //           }
+    //       });
+    //   })
 
-    </script> --}}
+    </script>
 @endsection

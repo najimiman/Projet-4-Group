@@ -22,9 +22,9 @@ class PreparationTacheController extends Controller
     public function index()
     {
         $brief=PreparationBrief::all();
-        $count =PreparationTache::count();
+        // $count =PreparationTache::count();
       
-        $tasks =PreparationTache::paginate(3);
+        $tasks =PreparationTache::paginate(2);
         
         // $pagination = PreparationTache::paginate($tasks);
 

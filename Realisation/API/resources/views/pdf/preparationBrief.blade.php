@@ -13,6 +13,7 @@
         <table id="customers">
           <tr>
             <th>Nom</th>
+            <th>Description</th>
             <th>Durée</th>
           </tr>
           @foreach ($preparationBrief as $value)
@@ -20,7 +21,6 @@
                         <td>{{ $value->Nom_du_brief }}</td>
                         <td>{{ $value->Description }}</td>
                         <td>{{ $value->Duree }}</td>
-                        <td>{{ $value->Formateur_id }}</td>
                     </tr>
           @endforeach
         </table>
