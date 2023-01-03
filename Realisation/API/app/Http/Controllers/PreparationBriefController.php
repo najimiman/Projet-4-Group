@@ -19,7 +19,7 @@ class PreparationBriefController extends Controller
     public function index()
     {
         $briefs = PreparationBrief::all();
-        $briefs_page =PreparationBrief::paginate(2);
+        $briefs_page =PreparationBrief::paginate(4);
         return view('preparationBrief.index',['briefs'=>$briefs,'briefs_page'=>$briefs_page]);
     }
 

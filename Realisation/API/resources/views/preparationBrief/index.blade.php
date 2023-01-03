@@ -44,7 +44,7 @@
           </tr>
       </thead>
       <tbody  class="table1" id="table1">
-          @foreach ($briefs as $value )
+          @foreach ($briefs_page as $value )
           <tr>
               <td>{{ $value->Nom_du_brief }}</td>
               <td>{{ $value->Description }}</td>
