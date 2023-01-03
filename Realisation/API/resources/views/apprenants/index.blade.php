@@ -31,7 +31,7 @@
 
 
                         <select class="btn btn-secondary dropdown-toggle ml-2" name="filter" id="filter">
-                            <option value="">select group</option>
+                            <option value="">{{__('message.all_groups')}}</option>
                             @foreach ($groupes as $value)
                             <option value="{{$value->id}}">{{$value->Nom_groupe}}</option>
                             @endforeach
@@ -41,7 +41,7 @@
 
                     <div class="search-box">
                         <i class="material-icons">&#xE8B6;</i>
-                        <input type="text" class="form-control" id="search" placeholder="Search&hellip;">
+                        <input type="text" class="form-control" id="search" value="{{old('search')}}" placeholder="Search&hellip;">
                     </div>
 
                 </div>
@@ -100,7 +100,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <form action="/importexcel" method="POST" enctype="multipart/form-data">
+              <form action="/importexcelapprenant" method="POST" enctype="multipart/form-data">
               @csrf
 
               <div class="modal-body">

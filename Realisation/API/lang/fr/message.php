@@ -9,6 +9,7 @@ return[
     '+add task'=>'Ajouter tache',
     '+add apprenant'=>'Ajouter apprenant',
     'all_briefs'=>'Tout les briefs',
+    'all_groups'=>'Tout les groupes',
     'name'=>'Nom',
     'description'=>'Description',
     'duration'=>'Durée',
@@ -29,8 +30,14 @@ return[
     'brief'=>'brief',
     'edit_task'=>'Modifier les tâches',
     'prenom'=>'prenom',
-    'image'=>'image'
-
+    'image'=>'image',
+    'adress'=>'address',
+    'email'=>'email',
+    'cin'=>'cin',
+    'group'=>'group',
+    'date_naissance'=>'date naissance',
+    'phone'=>'phone',
+    'edit_apprenant'=>'Modifier une apprenant',
 
 
 

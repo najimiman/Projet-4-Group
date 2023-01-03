@@ -70,16 +70,16 @@ class ApprenantController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'Nom'=>'required|max:50',
-        //     'Prenom'=>'required',
-        //     'Email'=>'required',
-        //     'Phone'=>'required',
-        //     'Adress'=>'required',
-        //     'CIN'=>'required',
-        //     'Date_naissance'=>'required',
-        //     'Image'=>'required',
-        // ]);
+        $request->validate([
+            'Nom'=>'required|max:50',
+            // 'Prenom'=>'required',
+            // 'Email'=>'required',
+            // 'Phone'=>'required',
+            // 'Adress'=>'required',
+            'CIN'=>'required',
+            // 'Date_naissance'=>'required',
+            'Image'=>'required|mimes:jpeg,png,jpg,gif',
+        ]);
         
         if($request->has('Image')){
         $file=$request->Image;

@@ -9,6 +9,7 @@ return[
     '+add task'=>'Add task',
     '+add apprenant'=>'add learner',
     'all_briefs'=>'All briefs',
+    'all_groups'=>'All groups',
     'name'=>'Name',
     'description'=>'Description',
     'duration'=>'Duration',
@@ -29,8 +30,14 @@ return[
     'brief'=>'brief',
     'edit_task'=>'Edit Tasks',
     'prenom'=>'first name',
-    'image'=>'image'
-
+    'image'=>'image',
+    'adress'=>'address',
+    'email'=>'email',
+    'cin'=>'cin',
+    'group'=>'group',
+    'date_naissance'=>'birth date',
+    'phone'=>'phone',
+    'edit_apprenant'=>'edit apprenant',
 ]
 
 ?>
