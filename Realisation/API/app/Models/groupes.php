@@ -19,4 +19,14 @@ class Groupes extends Model
         "Logo"
 
     ];
+
+    public function teacher(){
+        return $this->hasOne(Formateur::class);
+    }
+    public function students(){
+        return $this->belongsToMany(Apprenant::class, 'groupes_apprenant','Groupe_id');
+    }
+    public function formation(){
+        return $this->belongsTo(AnneFormation::class);
+    }
 }

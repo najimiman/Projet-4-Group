@@ -22,6 +22,10 @@ return new class extends Migration
             $table->foreignId('apprenant_P_brief_id')->constrained('brief')->onDelete('cascade');
             $table->foreign('Apprenant_id')->references('id')->on('apprenant')->onDelete('cascade');
             $table->string('Etat')->default('en pouse');
+
+            $table->unsignedInteger('preparation_brief_id');
+            $table->foreign('preparation_brief_id')->references('id')->on('preparation_brief')->onDelete('cascade');
+           
             $table->timestamp("date_debut")->nullable();
             $table->timestamp("date_fin")->nullable();
         });

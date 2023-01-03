@@ -15,4 +15,8 @@ class Brief extends Model
     "Preparation_brief_id",
     "Apprenant_id"
     ];
+
+    public function tasks(){
+        return $this->belongsTo(Tache::class);
+    }
 }

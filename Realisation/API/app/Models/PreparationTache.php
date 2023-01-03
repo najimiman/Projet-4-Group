@@ -17,4 +17,8 @@ class PreparationTache extends Model
     "Duree",
     "Preparation_brief_id"
     ];
+
+    public function preparation_brief(){
+        return $this->belongsTo(PreparationBrief::class);
+    }
 }

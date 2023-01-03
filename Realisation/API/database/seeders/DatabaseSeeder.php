@@ -39,11 +39,11 @@ class DatabaseSeeder extends Seeder
     Groupes::factory(2)->create();
     Apprenant::factory(5)->create();
     GroupesApprenant::factory(2)->create();
-    PreparationBrief::factory(4)->create();
+    PreparationBrief::factory(6)->create();
     PreparationTache::factory(6)->create();
-    Brief::factory(4)->create();
-    Tache::factory(6)->create();
-    GroupesPreparationBrief::factory(6)->create();
+    Brief::factory(6)->create();
+    Tache::factory(10)->create();
+    GroupesPreparationBrief::factory()->create();
 
   }
 }

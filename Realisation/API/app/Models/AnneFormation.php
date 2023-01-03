@@ -18,4 +18,7 @@ class AnneFormation extends Model
 
 
     ];
+    public function groups(){
+        return $this->hasMany(Groupes::class);
+    }
 }

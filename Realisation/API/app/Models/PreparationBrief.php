@@ -18,5 +18,22 @@ class PreparationBrief extends Model
     "Duree",
     "Formateur_id"
     ];
+
+    public function teacher(){
+        return $this->belongsTo(Formateur::class);
+    }
+
+    public function students(){
+        return $this->belongsToMany(Apprenant::class, 'brief', 'Apprenant_id');
+    }
+    
+    public function groups(){
+        return $this->belongsToMany(Groupes::class, 'groupes_preparation_brief', '');
+    }
+    
+
+    public function preparation_tasks(){
+        return $this->hasMany(PreparationTache::class);
+    }
 }
 

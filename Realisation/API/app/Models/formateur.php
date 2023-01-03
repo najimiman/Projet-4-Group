@@ -21,5 +21,12 @@ class Formateur extends Model
         "CIN",
         "Image"
     ];
+    public function groups(){
+        return $this->hasMany(Groupes::class);
+    }
+
+    public function teacher_preparation_brief(){
+        return $this->hasMany(PreparationBrief::class);
+    }
 }
 
