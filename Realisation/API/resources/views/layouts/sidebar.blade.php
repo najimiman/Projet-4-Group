@@ -19,18 +19,23 @@
 
     <!-- SidebarSearch Form -->
 
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-      <div class="info">
-        <a href="/" class="d-block">{{__('message.btn_taskManag')}}</a>
-      </div>
-    </div>
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-      <div class="info">
-        <a href="{{route('apprenant.index')}}" class="d-block">{{__('message.btn_apprenant')}}</a>
-      </div>
-    </div>
     <!-- Sidebar Menu -->
     <nav class="mt-2">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <a href="/" class="d-block">{{__('message.btn_taskManag')}}</a>
+        </div>
+      </div>
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <a href="{{route('apprenant.index')}}" class="d-block">{{__('message.btn_apprenant')}}</a>
+        </div>
+      </div>
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <a href="{{route('assign.index')}}" class="d-block">{{__('message.btn_assign')}}</a>
+        </div>
+      </div>
       
     </nav>
     <!-- /.sidebar-menu -->

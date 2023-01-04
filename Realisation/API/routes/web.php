@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PreparationTacheController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\ApprenantController;
+use App\Http\Controllers\GroupesApprenantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,10 @@ route::get('/searchapprenant',[ApprenantController::class,'search_apprenant'])->
 Route::get('exportexcelapprenant',[ApprenantController::class,'exportexcel'])->name('exportexcelapprenant');
 Route::post('importexcelapprenant',[ApprenantController::class,'importexcel'])->name('importexcelapprenant');
 route::get('/generatepdfapprenant',[ApprenantController::class,'generatepdf'])->name('generatepdfapprenant');
+
+Route::resource('assign', GroupesApprenantController::class);
+Route::get('/filter_par_group',[GroupesApprenantController::class,'filter_par_group'])->name('filter_par_group');
+Route::post('form', [GroupesApprenantController::class,'form_save'])->name('form');
 
 
 });
