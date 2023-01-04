@@ -3,8 +3,6 @@ return[
     'btn_taskManag'=>'Gestion des tâches',
     'btn_apprenant'=>'Gestion des apprenant',
     'btn_assign'=>'Assignement des Brief',
-    'title'=>'Gestion des tâches',
-    'title1'=>'Gestion des apprenant',
     'task'=>'Liste de tâches',
     'apprenant'=>'Liste des apprenant',
     '+add task'=>'Ajouter tache',

@@ -3,8 +3,6 @@ return[
     'btn_taskManag'=>'Task management',
     'btn_apprenant'=>'Learner management',
     'btn_assign'=>'Assignment of Briefs',
-    'title'=>'Task management',
-    'title1'=>'Learner management',
     'task'=>'Task list',
     'apprenant'=>'Learner List',
     '+add task'=>'Add task',
