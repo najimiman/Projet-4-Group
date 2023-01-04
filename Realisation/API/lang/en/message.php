@@ -1,10 +1,16 @@
 <?php
 return[
     'btn_taskManag'=>'Task management',
+    'btn_apprenant'=>'Learner management',
+    'btn_assign'=>'Assignment of Briefs',
     'title'=>'Task management',
+    'title1'=>'Learner management',
     'task'=>'Task list',
+    'apprenant'=>'Learner List',
     '+add task'=>'Add task',
+    '+add apprenant'=>'add learner',
     'all_briefs'=>'All briefs',
+    'all_groups'=>'All groups',
     'name'=>'Name',
     'description'=>'Description',
     'duration'=>'Duration',
@@ -23,8 +29,16 @@ return[
     'add'=>'Add',
     'pdf_title'=>'Liste des tâches',
     'brief'=>'brief',
-    'edit_task'=>'Edit Tasks'
-
+    'edit_task'=>'Edit Tasks',
+    'prenom'=>'first name',
+    'image'=>'image',
+    'adress'=>'address',
+    'email'=>'email',
+    'cin'=>'cin',
+    'group'=>'group',
+    'date_naissance'=>'birth date',
+    'phone'=>'phone',
+    'edit_apprenant'=>'edit apprenant',
 ]
 
 ?>

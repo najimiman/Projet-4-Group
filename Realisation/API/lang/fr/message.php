@@ -1,10 +1,16 @@
 <?php
 return[
     'btn_taskManag'=>'Gestion des tâches',
+    'btn_apprenant'=>'Gestion des apprenant',
+    'btn_assign'=>'Assignement des Brief',
     'title'=>'Gestion des tâches',
+    'title1'=>'Gestion des apprenant',
     'task'=>'Liste de tâches',
+    'apprenant'=>'Liste des apprenant',
     '+add task'=>'Ajouter tache',
+    '+add apprenant'=>'Ajouter apprenant',
     'all_briefs'=>'Tout les briefs',
+    'all_groups'=>'Tout les groupes',
     'name'=>'Nom',
     'description'=>'Description',
     'duration'=>'Durée',
@@ -23,8 +29,16 @@ return[
     'add'=>'Ajouter',
     'pdf_title'=>'To do-list',
     'brief'=>'brief',
-    'edit_task'=>'Modifier les tâches'
-
+    'edit_task'=>'Modifier les tâches',
+    'prenom'=>'prenom',
+    'image'=>'image',
+    'adress'=>'address',
+    'email'=>'email',
+    'cin'=>'cin',
+    'group'=>'group',
+    'date_naissance'=>'date naissance',
+    'phone'=>'phone',
+    'edit_apprenant'=>'Modifier une apprenant',
 
 
 

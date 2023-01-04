@@ -24,7 +24,7 @@
     <div class="col-md-6 col-lg-6">
                 <form class="card" action="{{ route('task.store') }}" method="POST">
                     @csrf
-                  <h5 class="card-title d-flex justify-content-center fw-400">{{__('message.add_task')}}</h5>
+                  <h5 class="card-title d-flex justify-content-center fw-400">{{__('message.+add apprenant')}}</h5>
               <div class="card-body">
                             <div class="form-group">
                                 <label class="text-muted" for="">{{__('message.name')}}</label>

@@ -1,10 +1,16 @@
 <?php
 return[
     'btn_taskManag'=>'ادارة المهام',
+    'btn_apprenant'=>'إدارة المتعلم',
+    'btn_assign'=>'تعيين موجزات',
     'title'=>'ادارة المهام',
+    'title1'=>'إدارة المتعلم',
     'task'=>'قائمة المهام ',
+    'apprenant'=>'قائمة المتعلمين',
     '+add task'=>'إضافة مهمة',
+    '+add apprenant'=>'إضافة متعلم',
     'all_briefs'=>' جميع المشاريع',
+    'all_groups'=>'جميع المجموعات',
     'name'=>'اسم',
     'description'=>'وصف',
     'duration'=>'مدة',
@@ -23,7 +29,16 @@ return[
     'add'=>'أضف',
     'pdf_title'=>'عنوان PDF',
     'brief'=>'مشروع',
-    'edit_task'=>' تعديل المهمة'
+    'edit_task'=>' تعديل المهمة',
+    'prenom'=>'الاسم الأول',
+    'image'=>'الصورة',
+    'adress'=>'عنوان',
+    'email'=>'البريد الإلكتروني',
+    'cin'=>'البطاقة الوطنية',
+    'group'=>'مجموعة',
+    'date_naissance'=>'تاريخ الميلاد',
+    'phone'=>'هاتف',
+    'edit_apprenant'=>'عدل عنوان المتعلم',
 
 
 ]
