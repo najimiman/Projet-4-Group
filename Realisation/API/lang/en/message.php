@@ -39,6 +39,12 @@ return[
     'date_naissance'=>'birth date',
     'phone'=>'phone',
     'edit_apprenant'=>'edit apprenant',
+    'edit_brief'=>'Edit Brief',
+    'brief'=>'brief list',
+    'add_brief'=>'Add Brief',
+    'titleBrief'=>'Brief management',
+    'profList' => 'List of professors',
+    'allProfs' => 'All professors'
 ]
 
 ?>

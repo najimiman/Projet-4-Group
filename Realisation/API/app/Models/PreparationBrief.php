@@ -18,5 +18,10 @@ class PreparationBrief extends Model
     "Duree",
     "Formateur_id"
     ];
+
+
+    public function preparation_tasks(){
+        return $this->hasMany(PreparationTache::class);
+    }
 }
 

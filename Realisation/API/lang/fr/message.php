@@ -39,9 +39,11 @@ return[
     'date_naissance'=>'date naissance',
     'phone'=>'phone',
     'edit_apprenant'=>'Modifier une apprenant',
-
-
-
+    'edit_brief'=>'Modifier les brief',
+    'add_brief'=>'Ajouter un brief',
+    'titleBrief'=>'Gestion des brief',
+    'profList' => 'liste des formateurs',
+    'allProfs' => 'tout les formateurs'
 ]
 
 ?>

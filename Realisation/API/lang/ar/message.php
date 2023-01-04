@@ -14,7 +14,6 @@ return[
     'name'=>'اسم',
     'description'=>'وصف',
     'duration'=>'مدة',
-    'actions'=>'إجراءات',
     'export_pdf'=>'تصدير PDF',
     'import_excel'=>'استيراد Excel',
     'export_excel'=>' تصدير Excel',
@@ -39,8 +38,12 @@ return[
     'date_naissance'=>'تاريخ الميلاد',
     'phone'=>'هاتف',
     'edit_apprenant'=>'عدل عنوان المتعلم',
-
-
+    'actions'=>'إجراءات',
+    'add_brief' => 'اضافة مشروع',
+    'edit_brief' => 'تعديل المشروع',
+    'titleBrief'=>'ادارة المشروع',
+    'profList' => 'قائمة الاساتذة',
+    'allProfs' => 'جميع الاساتذة'
 ]
 
 ?>
