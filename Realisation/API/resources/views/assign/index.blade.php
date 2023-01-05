@@ -30,10 +30,11 @@
                                     <h2>{{ __('message.message_prf') }}</h2>
                                 </div>
                             </div>
-
                             <div class="col-sm-12 d-flex flex-end p-3">
-                                {{-- select and choose Brief --}}
-                                <select class="custom-select" id="select">
+
+                                {{-- select Brief --}}
+                                <select class="custom-select" id="select" name="select">
+                                    <option value="">{{ __('message.select_brief') }}:</option>
                                     @foreach ($brief as $value)
                                         <option value="{{ $value->id }}">
                                             {{ $value->Nom_du_brief }}
@@ -43,9 +44,9 @@
                                 <span id="id_input"></span>
                                 {{--  --}}
 
-                                {{-- select and filter/Promotion --}}
+                                {{-- filter/Groupe --}}
                                 <select class="btn btn-dark dropdown-toggle" name="filter" id="filter">
-                                <option> {{ __('message.select_gr ') }} </option>
+                                    <option value="">{{ __('message.all_groups') }}</option>
                                     @foreach ($promo as $value)
                                         <option value="{{ $value->id }}">{{ $value->Nom_groupe }}</option>
                                     @endforeach
@@ -54,15 +55,14 @@
                             </div>
                         </div>
 
-
                         <table class="table table-striped table-hover table-bordered">
                             <thead class="table-primary">
                                 <th>
                                     <div class="form-check for-switch">
                                         <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
                                             onclick='checkUncheck(this)'>
-                                        <label class="form-check-label" for="flexSwitchCheckDefault"> 
-                                            {{ __('message.checkbox_tous') }} Tous les Apprenants
+                                        <label class="form-check-label" for="flexSwitchCheckDefault">
+                                            {{ __('message.checkbox_tous') }}
                                         </label>
                                     </div>
                                 </th>
@@ -75,9 +75,8 @@
                                             <td>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox"
-                                                        value="{{ $student->id }}" id="defaultCheck1"
-                                                        name="ids[{{ $student->id }}]">
-                                                    <label class="form-check-label" for="defaultCheck1">
+                                                        value="{{ $student->id }}" id="defaultCheck" name="check[]">
+                                                    <label class="form-check-label" for="defaultCheck">
                                                         {{ $student->id }}&nbsp;{{ $student->Nom }}&nbsp;{{ $student->Prenom }}
                                                     </label>
                                                 </div>
@@ -98,13 +97,14 @@
                                 {{-- {!! $apprenants->links() !!} --}}
                             </div>
                             <div class="d-flex justify-content-end">
-                                <input type="submit" class="btn btn-outline-primary" value="{{ __('message.btn_affecter ') }}">
+                                <button type="submit" class="btn btn-outline-primary" name="save_select">
+                                    {{ __('message.btn_affecter') }}
+                                </button>
                             </div>
                         </div>
-
                     </form>
-
                 </div>
+
             </div>
         </div>
         <br>
@@ -131,22 +131,25 @@
                         for (let i = 0; i < apprenants.length; i++) {
                             html +=
                                 '<tr>\
-                                                    <td>\
-                                                        <div class="form-check">\
-                                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="student">\
-                                                            <label class="form-check-label" for="defaultCheck1">\
-                                                                ' + apprenants[i]['Nom'] + ' &nbsp; ' + apprenants[i][
+                                                                                    <td>\
+                                                                                        <div class="form-check">\
+                                                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="student">\
+                                                                                        <label class="form-check-label" for="defaultCheck1">\
+                                                                                           ' + apprenants[i]['Nom'] +
+                                ' &nbsp; ' +
+                                apprenants[
+                                    i][
                                     'Prenom'
                                 ] + '\
-                                                            </label>\
-                                                    </div>\
-                                                    </td>\
-                                                </tr>';
+                                                                                        </label>\
+                                                                                        </div>\
+                                                                                    </td>\
+                                                                                </tr>';
                         }
                     } else {
                         html += '<tr>\
-                                            <td>Aucun apprenant</td>\
-                                            </tr>';
+                                                                                    <td>Aucun apprenant</td>\
+                                                                                </tr>';
                     }
                     $('#table1').html(html);
                 }
@@ -155,13 +158,12 @@
 
         $('#select').on('change', function() {
             $value = $(this).val();
-            // alert($value);
             document.getElementById("id_input").innerHTML = $value;
         })
 
 
         function checkUncheck(main) {
-            all = document.getElementsbyName("ids[{{ $student->id }}]");
+            all = document.getElementsByName("check[]");
             for (var a = 0; a < all.length; a++) {
                 all[a].checked = main.checked;
             }

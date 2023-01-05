@@ -55,8 +55,7 @@
                 </div>
                 <div class="mt-3 pb-3 mb-3 d-flex">
                     <a href="{{ route('assign.index') }}" class="nav-link active m">
-                        {{-- <i class="nav-icon fas fa-table"></i>  --}}
-                        &nbsp;
+                        <i class="nav-icon fas fa-table"></i> &nbsp;
                         <p>
                             {{ __('message.btn_assign') }}
                         </p>

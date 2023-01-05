@@ -2,7 +2,6 @@
 return[
     'btn_taskManag'=>'Task management',
     'btn_apprenant'=>'Learner management',
-    'btn_assign'=>'Assignment of Briefs',
     'task'=>'Task list',
     'apprenant'=>'Learner List',
     '+add task'=>'Add task',
@@ -42,7 +41,10 @@ return[
     'add_brief'=>'Add Brief',
     'titleBrief'=>'Brief management',
     'profList' => 'List of professors',
-    'allProfs' => 'All professors'
+    'allProfs' => 'All professors',
+    'btn_assign'=>'Assignment of Briefs',
+    'message_prf'=>'Select a brief, tick the learners concerned by and assign',
+    'checkbox_tous'=>'All learners',
+    'btn_affecter'=>'Affect'
 ]
-
 ?>

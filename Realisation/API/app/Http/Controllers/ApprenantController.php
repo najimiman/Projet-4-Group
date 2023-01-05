@@ -27,6 +27,7 @@ class ApprenantController extends Controller
         // dd($tasks);
         return view('apprenants.index',['groupes'=>$groupes,'apprenant'=>$apprenant]);
     }
+
     public function filter_group(Request $request){
         if($request->has('filter') && !empty($request->filter)){
             $apprenants = DB::table('Apprenant')
@@ -45,6 +46,7 @@ class ApprenantController extends Controller
         }
             
     }
+    
     public function search_apprenant(Request $request){
         $searchapprenat=Apprenant::where('Nom','Like','%'.$request->searchapprenant.'%')->get();
         return response(['searchapprenat'=>$searchapprenat]);

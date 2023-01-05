@@ -2,7 +2,6 @@
 return[
     'btn_taskManag'=>'Gestion des tâches',
     'btn_apprenant'=>'Gestion des apprenant',
-    'btn_assign'=>'Assignement des Brief',
     'task'=>'Liste de tâches',
     'apprenant'=>'Liste des apprenant',
     '+add task'=>'Ajouter tache',
@@ -41,7 +40,10 @@ return[
     'add_brief'=>'Ajouter un brief',
     'titleBrief'=>'Gestion des brief',
     'profList' => 'liste des formateurs',
-    'allProfs' => 'tout les formateurs'
+    'allProfs' => 'tout les formateurs',
+    'btn_assign'=>'Assignement des Brief',
+    'message_prf'=>'Sélectionner une brief, cocher les apprenants concerné par et affecter',
+    'checkbox_tous'=>'Tous les apprenants',
+    'btn_affecter'=>'Affecter'
 ]
-
 ?>

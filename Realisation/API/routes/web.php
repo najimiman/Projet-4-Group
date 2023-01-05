@@ -21,7 +21,6 @@ use App\Http\Controllers\PreparationBriefController;
 
 Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],function(){
 
-
 Route::resource('task', PreparationTacheController::class);
 Route::get('/',[PreparationTacheController::class,'index'])->name('index');
 Route::get('exportexcel',[PreparationTacheController::class,'exportexcel'])->name('exportexcel');
@@ -39,7 +38,6 @@ route::get('/searchbrief',[PreparationBriefController::class,'search_brief'])->n
 Route::resource('apprenant', ApprenantController::class);
 route::get('/filter_group',[ApprenantController::class,'filter_group'])->name('filter_group');
 route::get('/searchapprenant',[ApprenantController::class,'search_apprenant'])->name('searchapprenant');
-
 Route::get('exportexcelapprenant',[ApprenantController::class,'exportexcel'])->name('exportexcelapprenant');
 Route::post('importexcelapprenant',[ApprenantController::class,'importexcel'])->name('importexcelapprenant');
 route::get('/generatepdfapprenant',[ApprenantController::class,'generatepdf'])->name('generatepdfapprenant');
@@ -47,6 +45,5 @@ route::get('/generatepdfapprenant',[ApprenantController::class,'generatepdf'])->
 Route::resource('assign', GroupesApprenantController::class);
 Route::get('/filter_par_group',[GroupesApprenantController::class,'filter_par_group'])->name('filter_par_group');
 Route::post('form', [GroupesApprenantController::class,'form_save'])->name('form');
-
 
 });
