@@ -94,12 +94,12 @@
 
                         <div class="d-flex justify-content-between">
                             <div class="d-flex justify-content-start">
-                                {{-- {!! $apprenants->links() !!} --}}
-                            </div>
-                            <div class="d-flex justify-content-end">
                                 <button type="submit" class="btn btn-outline-primary" name="save_select">
                                     {{ __('message.btn_affecter') }}
                                 </button>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                {!! $apprenants->links() !!}
                             </div>
                         </div>
                     </form>

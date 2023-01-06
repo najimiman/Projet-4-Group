@@ -17,11 +17,11 @@ class ApprenantPreparationBrief extends Model
     ];
 
     public function apprenantsBrief(){
-        return $this->belongsToMany(PreparationBrief::class);
+        return $this->belongsToMany(PreparationBrief::class,'apprenant_preparation_brief');
     }
 
     public function briefsApprenant(){
-        return $this->belongsToMany(apprenant::class);
+        return $this->belongsToMany(apprenant::class,'apprenant_preparation_brief');
     }
 
 }

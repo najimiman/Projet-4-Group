@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+Use \Carbon\Carbon;
 use App\Models\PreparationBrief;
 use App\Models\groupes;
 use App\Models\apprenant;
@@ -18,8 +18,8 @@ class GroupesApprenantController extends Controller
     {
         $promo = groupes::all();
         $brief = PreparationBrief::all();
-        // $apprenants = apprenant::paginate(4);
-        $apprenants = apprenant::all();
+        $apprenants = apprenant::paginate(5);
+        // $apprenants = apprenant::all();
         return view('assign.index', ['brief' => $brief, 'promo' => $promo, 'apprenants' => $apprenants]);
     }
 
@@ -45,30 +45,34 @@ class GroupesApprenantController extends Controller
     public function form_save(Request $request)
     {
         if ($request->has('select') && !empty($request->select)) {
-            $briefs = DB::table('preparation_brief')
-                ->where('preparation_brief.id', $request->select)
-                ->first();
-
             // dd($request); 
-            // dd($briefs);
-            // dd($request->input('check'));
-            $arrayApprenant = implode(',', $request->input('check'));
-            print_r($arrayApprenant);
-            print_r($briefs->id);
 
-            // foreach ($request->checkbox as $key) {
-                $insert = [
-                    'Apprenant_id' => $arrayApprenant,
-                    'Preparation_brief_id' => $request->$briefs->id,
-                    'Date_affectation' => ''
-                ];
-                DB::table('apprenant_preparation_brief')->insert($insert);
-            // }
+            // $apprenants = DB::table('apprenant')
+            //     ->select("*")
+            //     ->where('apprenant.id', 'Like','%'.$request->input('check').'%')
+            //     ->get();
+            // dd($apprenants);
+            // print_r($request->input('check')); //array apprenants selected
 
-            // return redirect()->back();
+            // $briefs = DB::table('preparation_brief')
+            //     ->where('preparation_brief.id', $request->select)
+            //     ->first();
+            // dd($briefs); //brief selected
 
-        }else {
-            return view('welcome');
+            foreach ($request->check as $key => $name) {
+
+                DB::table('apprenant_preparation_brief')->insert(
+                    [
+                        'Date_affectation' => Carbon::now(),
+                        'Preparation_brief_id' => $request->input('select'),
+                        'Apprenant_id' => $request->check[$key]
+                    ]
+                );
+            }
+
+            return redirect()->back();
+        } else {
+            return back();
         }
     }
 }
