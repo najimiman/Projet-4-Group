@@ -21,7 +21,7 @@
             <div class="table-responsive">
                 <div class="table-wrapper">
 
-                    <form action="{{ route('form') }}" method="post">
+                    <form action="{{ route('form') }}" method="POST">
                         @csrf
 
                         <div class="table-title">
@@ -76,9 +76,8 @@
                                     <div class="form-check for-switch">
                                         <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
                                             onclick='checkUncheck(this)'>
-                                        <label class="form-check-label" for="flexSwitchCheckDefault">
-                                            {{ __('message.checkbox_tous') }}
-                                        </label>
+                                        <label class="form-check-label"
+                                            for="flexSwitchCheckDefault">{{ __('message.checkbox_tous') }}</label>
                                     </div>
                                 </th>
                             </thead>
@@ -92,7 +91,7 @@
                                                     <input class="form-check-input" type="checkbox"
                                                         value="{{ $student->id }}" id="defaultCheck" name="check[]">
                                                     <label class="form-check-label" for="defaultCheck">
-                                                        {{ $student->id }}&nbsp;{{ $student->Nom }}&nbsp;{{ $student->Prenom }}
+                                                        &nbsp;{{ $student->Nom }}&nbsp;{{ $student->Prenom }}
                                                     </label>
                                                 </div>
                                             </td>
@@ -105,21 +104,26 @@
                                 @endif
 
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="d-flex justify-content-start">
+                                                <button type="submit" class="btn btn-outline-primary">
+                                                    {{ __('message.btn_affecter') }}
+                                                </button>
+                                            </div>
+                                            <div class="d-flex justify-content-end">
+                                                {!! $apprenants->links() !!}
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
                         </table>
 
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex justify-content-start">
-                                <button type="submit" class="btn btn-outline-primary" name="save_select">
-                                    {{ __('message.btn_affecter') }}
-                                </button>
-                            </div>
-                            <div class="d-flex justify-content-end">
-                                {!! $apprenants->links() !!}
-                            </div>
-                        </div>
                     </form>
                 </div>
-
             </div>
         </div>
         <br>
@@ -146,26 +150,20 @@
                         for (let i = 0; i < apprenants.length; i++) {
                             html +=
                                 '<tr>\
-                                                                                            <td>\
-                                                                                                <div class="form-check">\
-                                                                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="student">\
-                                                                                                <label class="form-check-label" for="defaultCheck1">\
-                                                                                                   ' + apprenants[i][
-                                'Nom'] +
-                                ' &nbsp; ' +
-                                apprenants[
-                                    i][
-                                    'Prenom'
-                                ] + '\
-                                                                                                </label>\
-                                                                                                </div>\
-                                                                                            </td>\
-                                                                                        </tr>';
+                                    <td>\
+                                    <div class="form-check">\
+                                    <input class="form-check-input" type="checkbox" value="' + apprenants[i]['id'] + '" id="defaultCheck" name="check[]">\
+                                    <label class="form-check-label" for="defaultCheck1">\
+                                        ' + apprenants[i]['Nom'] + ' &nbsp; ' + apprenants[i]['Prenom'] + '\
+                                    </label>\
+                                    </div>\
+                                    </td>\
+                                </tr>';
                         }
                     } else {
                         html += '<tr>\
-                                                                                            <td>Aucun apprenant</td>\
-                                                                                        </tr>';
+                                    <td>Aucun apprenant</td>\
+                                </tr>';
                     }
                     $('#table1').html(html);
                 }
