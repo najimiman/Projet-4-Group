@@ -140,6 +140,87 @@
             "time": "2022-08-10T22:54:19+00:00"
         },
         {
+            "name": "composer/semver",
+            "version": "3.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/semver.git",
+                "reference": "3953f23262f2bff1919fc82183ad9acb13ff62c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/semver/zipball/3953f23262f2bff1919fc82183ad9acb13ff62c9",
+                "reference": "3953f23262f2bff1919fc82183ad9acb13ff62c9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.4",
+                "symfony/phpunit-bridge": "^4.2 || ^5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Semver\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                },
+                {
+                    "name": "Rob Bast",
+                    "email": "rob.bast@gmail.com",
+                    "homepage": "http://robbast.nl"
+                }
+            ],
+            "description": "Semver library that offers utilities, version constraint parsing and validation.",
+            "keywords": [
+                "semantic",
+                "semver",
+                "validation",
+                "versioning"
+            ],
+            "support": {
+                "irc": "irc://irc.freenode.org/composer",
+                "issues": "https://github.com/composer/semver/issues",
+                "source": "https://github.com/composer/semver/tree/3.3.2"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-04-01T19:23:25+00:00"
+        },
+        {
             "name": "dflydev/dot-access-data",
             "version": "v3.0.2",
             "source": {
@@ -551,16 +632,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "3.2.4",
+            "version": "3.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "5f35e41eba05fdfbabd95d72f83795c835fb7ed2"
+                "reference": "b531a2311709443320c786feb4519cfaf94af796"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/5f35e41eba05fdfbabd95d72f83795c835fb7ed2",
-                "reference": "5f35e41eba05fdfbabd95d72f83795c835fb7ed2",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/b531a2311709443320c786feb4519cfaf94af796",
+                "reference": "b531a2311709443320c786feb4519cfaf94af796",
                 "shasum": ""
             },
             "require": {
@@ -569,7 +650,6 @@
                 "symfony/polyfill-intl-idn": "^1.15"
             },
             "require-dev": {
-                "php-coveralls/php-coveralls": "^2.2",
                 "phpunit/phpunit": "^8.5.8|^9.3.3",
                 "vimeo/psalm": "^4"
             },
@@ -607,7 +687,7 @@
             ],
             "support": {
                 "issues": "https://github.com/egulias/EmailValidator/issues",
-                "source": "https://github.com/egulias/EmailValidator/tree/3.2.4"
+                "source": "https://github.com/egulias/EmailValidator/tree/3.2.5"
             },
             "funding": [
                 {
@@ -615,7 +695,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-30T14:09:25+00:00"
+            "time": "2023-01-02T17:26:14+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -1858,24 +1938,25 @@
         },
         {
             "name": "maatwebsite/excel",
-            "version": "3.1.44",
+            "version": "3.1.45",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SpartnerNL/Laravel-Excel.git",
-                "reference": "289c3320982510dacfe0dd00de68061a2b7f4a43"
+                "reference": "80627071a8cebb3c1119f1d2881bb6a03a8f9152"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SpartnerNL/Laravel-Excel/zipball/289c3320982510dacfe0dd00de68061a2b7f4a43",
-                "reference": "289c3320982510dacfe0dd00de68061a2b7f4a43",
+                "url": "https://api.github.com/repos/SpartnerNL/Laravel-Excel/zipball/80627071a8cebb3c1119f1d2881bb6a03a8f9152",
+                "reference": "80627071a8cebb3c1119f1d2881bb6a03a8f9152",
                 "shasum": ""
             },
             "require": {
+                "composer/semver": "^3.3",
                 "ext-json": "*",
                 "illuminate/support": "5.8.*|^6.0|^7.0|^8.0|^9.0",
                 "php": "^7.0|^8.0",
                 "phpoffice/phpspreadsheet": "^1.18",
-                "psr/simple-cache": "^1.0|^2.0"
+                "psr/simple-cache": "^1.0|^2.0|^3.0"
             },
             "require-dev": {
                 "orchestra/testbench": "^6.0|^7.0",
@@ -1921,7 +2002,7 @@
             ],
             "support": {
                 "issues": "https://github.com/SpartnerNL/Laravel-Excel/issues",
-                "source": "https://github.com/SpartnerNL/Laravel-Excel/tree/3.1.44"
+                "source": "https://github.com/SpartnerNL/Laravel-Excel/tree/3.1.45"
             },
             "funding": [
                 {
@@ -1933,7 +2014,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-10-14T20:01:10+00:00"
+            "time": "2023-01-02T17:17:56+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -3406,16 +3487,16 @@
         },
         {
             "name": "psr/simple-cache",
-            "version": "2.0.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/simple-cache.git",
-                "reference": "8707bf3cea6f710bf6ef05491234e3ab06f6432a"
+                "reference": "764e0b3939f5ca87cb904f570ef9be2d78a07865"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/8707bf3cea6f710bf6ef05491234e3ab06f6432a",
-                "reference": "8707bf3cea6f710bf6ef05491234e3ab06f6432a",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/764e0b3939f5ca87cb904f570ef9be2d78a07865",
+                "reference": "764e0b3939f5ca87cb904f570ef9be2d78a07865",
                 "shasum": ""
             },
             "require": {
@@ -3424,7 +3505,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -3451,9 +3532,9 @@
                 "simple-cache"
             ],
             "support": {
-                "source": "https://github.com/php-fig/simple-cache/tree/2.0.0"
+                "source": "https://github.com/php-fig/simple-cache/tree/3.0.0"
             },
-            "time": "2021-10-29T13:22:09+00:00"
+            "time": "2021-10-29T13:26:27+00:00"
         },
         {
             "name": "psy/psysh",
@@ -6794,16 +6875,16 @@
         },
         {
             "name": "nunomaduro/collision",
-            "version": "v6.3.2",
+            "version": "v6.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/collision.git",
-                "reference": "83699b231e7f277bfa2e823788973bf4082f019a"
+                "reference": "f05978827b9343cba381ca05b8c7deee346b6015"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/83699b231e7f277bfa2e823788973bf4082f019a",
-                "reference": "83699b231e7f277bfa2e823788973bf4082f019a",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/f05978827b9343cba381ca05b8c7deee346b6015",
+                "reference": "f05978827b9343cba381ca05b8c7deee346b6015",
                 "shasum": ""
             },
             "require": {
@@ -6878,7 +6959,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-12-23T21:36:49+00:00"
+            "time": "2023-01-03T12:54:54+00:00"
         },
         {
             "name": "phar-io/manifest",

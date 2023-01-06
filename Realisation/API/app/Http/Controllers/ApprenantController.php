@@ -35,7 +35,6 @@ class ApprenantController extends Controller
                 ->join('Groupes', 'groupes_apprenant.Groupe_id', '=', 'Groupes.id')
                 ->where('Groupes.id','Like','%'.$request->filter.'%')
                 ->get();
-                
                 return response(['dataapprenants'=>$apprenants]); 
         }
         else{
