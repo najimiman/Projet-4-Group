@@ -4,13 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-Use \Carbon\Carbon;
+use \Carbon\Carbon;
 use App\Models\PreparationBrief;
 use App\Models\groupes;
 use App\Models\apprenant;
-use App\Models\ApprenantPreparationBrief;
-use App\Models\GroupesApprenant;
-
 
 class GroupesApprenantController extends Controller
 {
@@ -45,34 +42,28 @@ class GroupesApprenantController extends Controller
     public function form_save(Request $request)
     {
         if ($request->has('select') && !empty($request->select)) {
-            // dd($request); 
+            if ($request->has('check') && !empty($request->check)) {
+                // dd($request); 
 
-            // $apprenants = DB::table('apprenant')
-            //     ->select("*")
-            //     ->where('apprenant.id', 'Like','%'.$request->input('check').'%')
-            //     ->get();
-            // dd($apprenants);
-            // print_r($request->input('check')); //array apprenants selected
+                foreach ($request->check as $key => $name) {
 
-            // $briefs = DB::table('preparation_brief')
-            //     ->where('preparation_brief.id', $request->select)
-            //     ->first();
-            // dd($briefs); //brief selected
+                    DB::table('apprenant_preparation_brief')->insert(
+                        [
+                            'Date_affectation' => Carbon::now(),
+                            'Preparation_brief_id' => $request->input('select'),
+                            'Apprenant_id' => $request->check[$key]
+                        ]
+                    );
+                }
 
-            foreach ($request->check as $key => $name) {
+                return redirect()->back()->with(['success' => 'Brief assigner correctement']);
 
-                DB::table('apprenant_preparation_brief')->insert(
-                    [
-                        'Date_affectation' => Carbon::now(),
-                        'Preparation_brief_id' => $request->input('select'),
-                        'Apprenant_id' => $request->check[$key]
-                    ]
-                );
+            } else {
+                return back()->with(['fail' => 'Veuillez choisir les apprenants']);
             }
-
-            return redirect()->back();
         } else {
-            return back();
+            return back()->with(['fail' => 'Veuillez selectionner un Brief']);
         }
     }
+
 }

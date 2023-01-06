@@ -41,7 +41,7 @@
                                         </option>
                                     @endforeach
                                 </select>
-                                <span id="id_input"></span>
+                                {{-- <span id="id_input"></span> --}}
                                 {{--  --}}
 
                                 {{-- filter/Groupe --}}
@@ -54,6 +54,21 @@
                                 {{--  --}}
                             </div>
                         </div>
+
+                        <!-- message de validation -->
+                        @if (Session::has('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ Session::get('success') }}
+                            </div>
+                        @endif
+                        <!--  -->
+                        <!-- message d'erreur -->
+                        @if (Session::has('fail'))
+                            <div class="alert alert-danger" role="alert">
+                                {{ Session::get('fail') }}
+                            </div>
+                        @endif
+                        <!--  -->
 
                         <table class="table table-striped table-hover table-bordered">
                             <thead class="table-primary">
@@ -131,35 +146,36 @@
                         for (let i = 0; i < apprenants.length; i++) {
                             html +=
                                 '<tr>\
-                                                                                    <td>\
-                                                                                        <div class="form-check">\
-                                                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="student">\
-                                                                                        <label class="form-check-label" for="defaultCheck1">\
-                                                                                           ' + apprenants[i]['Nom'] +
+                                                                                            <td>\
+                                                                                                <div class="form-check">\
+                                                                                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="student">\
+                                                                                                <label class="form-check-label" for="defaultCheck1">\
+                                                                                                   ' + apprenants[i][
+                                'Nom'] +
                                 ' &nbsp; ' +
                                 apprenants[
                                     i][
                                     'Prenom'
                                 ] + '\
-                                                                                        </label>\
-                                                                                        </div>\
-                                                                                    </td>\
-                                                                                </tr>';
+                                                                                                </label>\
+                                                                                                </div>\
+                                                                                            </td>\
+                                                                                        </tr>';
                         }
                     } else {
                         html += '<tr>\
-                                                                                    <td>Aucun apprenant</td>\
-                                                                                </tr>';
+                                                                                            <td>Aucun apprenant</td>\
+                                                                                        </tr>';
                     }
                     $('#table1').html(html);
                 }
             });
         })
 
-        $('#select').on('change', function() {
-            $value = $(this).val();
-            document.getElementById("id_input").innerHTML = $value;
-        })
+        // $('#select').on('change', function() {
+        //     $value = $(this).val();
+        //     document.getElementById("id_input").innerHTML = $value;
+        // })
 
 
         function checkUncheck(main) {
