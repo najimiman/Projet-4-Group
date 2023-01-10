@@ -114,7 +114,7 @@
                                                 </button>
                                             </div>
                                             <div class="d-flex justify-content-end">
-                                                {!! $apprenants->links() !!}
+                                                {{-- {!! $apprenants->links() !!} --}}
                                             </div>
                                         </div>
                                     </td>
