@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ApprenantPreparationTache extends Model
+class Tache extends Model
 {
     use HasFactory;
-    protected $table = "apprenant_preparation_tache";
+    protected $table = "tache";
     public $timestamps= false;
     protected $fillable = [
     "Preparation_tache_id",

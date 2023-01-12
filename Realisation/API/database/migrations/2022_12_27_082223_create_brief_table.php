@@ -16,10 +16,18 @@ return new class extends Migration
         Schema::create('brief', function (Blueprint $table) {
             $table->id();
             $table->date('Date_affectation')->nullable();
+
             $table->unsignedInteger("Preparation_brief_id")->nullable();
+            $table->foreign('Preparation_brief_id')
+                ->references('id')
+                ->on('preparation_brief')
+                ->onDelete('cascade');
+
             $table->unsignedInteger("Apprenant_id")->nullable();
-            $table->foreign('Apprenant_id')->references('id')->on('apprenant')->onDelete('cascade');
-            $table->foreign('Preparation_brief_id')->references('id')->on('preparation_brief')->onDelete('cascade');
+            $table->foreign('Apprenant_id')
+                ->references('id')
+                ->on('apprenant')
+                ->onDelete('cascade');
         });
     }
 

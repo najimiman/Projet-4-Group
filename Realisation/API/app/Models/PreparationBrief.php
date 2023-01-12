@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PreparationBrief extends Model
 {
     use HasFactory;
-
-    use HasFactory;
     protected $table = "preparation_brief";
     public $timestamps= false;
     protected $fillable = [
@@ -18,8 +16,6 @@ class PreparationBrief extends Model
     "Duree",
     "Formateur_id"
     ];
-
-
     public function preparation_tasks(){
         return $this->hasMany(PreparationTache::class);
     }

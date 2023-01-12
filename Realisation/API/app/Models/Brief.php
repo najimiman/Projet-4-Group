@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ApprenantPreparationBrief extends Model
+class Brief extends Model
 {
     use HasFactory;
-    protected $table = "apprenant_preparation_brief";
+    protected $table = "brief";
     public $timestamps= false;
     protected $fillable = [
     "Date_affectation",
@@ -21,7 +21,7 @@ class ApprenantPreparationBrief extends Model
     }
 
     public function briefsApprenant(){
-        return $this->belongsToMany(apprenant::class,'apprenant_preparation_brief');
+        return $this->belongsToMany(Apprenant::class,'apprenant_preparation_brief');
     }
 
 }

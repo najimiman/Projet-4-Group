@@ -42,6 +42,8 @@ Route::get('exportexcelapprenant',[ApprenantController::class,'exportexcel'])->n
 Route::post('importexcelapprenant',[ApprenantController::class,'importexcel'])->name('importexcelapprenant');
 route::get('/generatepdfapprenant',[ApprenantController::class,'generatepdf'])->name('generatepdfapprenant');
 
+
+
 Route::resource('assign', GroupesApprenantController::class);
 Route::get('/filter_par_group',[GroupesApprenantController::class,'filter_par_group'])->name('filter_par_group');
 Route::post('form', [GroupesApprenantController::class,'form_save'])->name('form');

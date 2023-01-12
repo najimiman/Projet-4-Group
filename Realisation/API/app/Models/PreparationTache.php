@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PreparationTache extends Model
 {
     use HasFactory;
-
     protected $table = "preparation_tache";
     public $timestamps= false;
     protected $fillable = [
@@ -17,7 +16,6 @@ class PreparationTache extends Model
     "Duree",
     "Preparation_brief_id"
     ];
-
     public function preparation_brief(){
         return $this->belongsTo(PreparationBrief::class);
     }

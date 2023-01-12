@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class GroupesApprenant extends Model
 {
-    
-
     use HasFactory;
     protected $table = "groupes_apprenant";
-    protected $fillable = ["Groupe_id", "Apprenant_id"];
+    protected $fillable = [
+        "Groupe_id",
+        "Apprenant_id"
+    ];
     public $timestamps = true;
-
     public function groupe()
     {
         return $this->belongsToMany(Groupes::class);

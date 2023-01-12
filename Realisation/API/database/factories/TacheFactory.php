@@ -9,7 +9,7 @@ use App\Models\Tache;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\apprenant_preparation_tache>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\tache>
  */
 class TacheFactory extends Factory
 {
