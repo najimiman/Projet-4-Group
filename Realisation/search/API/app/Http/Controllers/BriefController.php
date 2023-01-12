@@ -10,20 +10,20 @@ class BriefController extends Controller
     public function index(Request $request)
     {
         $showinput=true;
-        $showmaster=true;
+        
         $tachee =PreparationTache::latest()->paginate(3);
 
         if($request->searchtask){
             if($request->ajax()){
                 $showinput=false;
-                $showmaster=false;
+                
             }
            $searchtask= $request->searchtask;
            
             $tache=PreparationTache::where('Nom_tache','Like','%'.$request->searchtask.'%')
             ->orderBy('id','desc')->paginate(3)->withQueryString();
             if($tache->count() >= 1){
-                return view('mytask', compact('tache','showinput','searchtask','showmaster'));
+                return view('aa', compact('tache','showinput','searchtask'));
             }
             else{
                 return response()->json([
@@ -33,7 +33,7 @@ class BriefController extends Controller
         }
         else{
             $tache=$tachee;
-            return view('mytask', compact('tache','showinput','showmaster'));
+            return view('aa', compact('tache','showinput'));
             // return redirect('/exemple');
         }
     }

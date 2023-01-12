@@ -20,7 +20,8 @@
 <body>
     
     @if ($showinput)
-    <input type="text" class="form-control input" id="searche"  value="{{$searchtask}}" >
+    <input type="text" class="form-control input" id="searche" >
+    {{-- value="{{$searchtask}}" --}}
     @endif
     <div class="mytable">
         <table class="table table-striped table-hover table-bordered">

@@ -39,14 +39,14 @@
                         </select> --}}
 
                     </div>
-                    @if ($showinput)
+                    {{-- @if ($showinput) --}}
                     
                     <div class="search-box">
                         <i class="material-icons">&#xE8B6;</i>
                         <h1>llllll</h1>
                         <input type="text" class="form-control" id="searche" name="searche" >
                     </div>
-                    @endif
+                    {{-- @endif --}}
 
                 </div>
             </div>
