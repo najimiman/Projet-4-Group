@@ -17,16 +17,12 @@ return new class extends Migration
             $table->id();
             $table->date('Date_affectation')->nullable();
 
-            $table->unsignedInteger("Preparation_brief_id")->nullable();
-            $table->foreign('Preparation_brief_id')
-                ->references('id')
-                ->on('preparation_brief')
+            $table->foreignId('Preparation_brief_id')
+                ->constrained('preparation_brief')
                 ->onDelete('cascade');
 
-            $table->unsignedInteger("Apprenant_id")->nullable();
-            $table->foreign('Apprenant_id')
-                ->references('id')
-                ->on('apprenant')
+            $table->foreignId('Apprenant_id')
+                ->constrained('apprenant')
                 ->onDelete('cascade');
         });
     }

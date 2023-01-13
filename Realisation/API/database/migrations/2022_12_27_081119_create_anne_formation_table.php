@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('anne_formation', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
+            
             $table->string('Annee_scolaire');
         });
     }

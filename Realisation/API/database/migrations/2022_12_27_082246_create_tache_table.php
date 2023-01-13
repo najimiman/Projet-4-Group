@@ -15,23 +15,26 @@ return new class extends Migration
     {
         Schema::create('tache', function (Blueprint $table) {
             $table->id();
-
-            $table->unsignedInteger("preparation_tache_id");
-            $table->foreign('preparation_tache_id')->references('id')->on('preparation_tache')->onDelete('cascade');
-
-            $table->unsignedInteger("Apprenant_id");
-            $table->foreign('Apprenant_id')->references('id')->on('apprenant')->onDelete('cascade');
-            
-            $table->unsignedInteger("preparation_brief_id");
-            $table->foreign('preparation_brief_id')->references('id')->on('preparation_brief')->onDelete('cascade');
-
-            $table->foreignId('apprenant_P_brief_id')->constrained('brief')->onDelete('cascade');
             $table->string('Etat')->default('en pouse');
-
             $table->timestamp("date_debut")->nullable();
             $table->timestamp("date_fin")->nullable();
-        });
 
+            $table->foreignId('preparation_tache_id')
+                ->constrained('preparation_tache')
+                ->onDelete('cascade');
+
+            $table->foreignId('Apprenant_id')
+                ->constrained('apprenant')
+                ->onDelete('cascade');
+
+            // $table->foreignId('preparation_brief_id')
+            //     ->constrained('preparation_brief')
+            //     ->onDelete('cascade');
+                
+            $table->foreignId('apprenant_P_brief_id')
+                ->constrained('brief')
+                ->onDelete('cascade');
+        });
     }
 
     /**

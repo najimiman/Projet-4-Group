@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\Formateur;
@@ -10,11 +9,10 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class FormateurFactory extends Factory
 {
-    protected $model=Formateur::class;
+    protected $model = Formateur::class;
     public function definition()
     {
         return [
-
             "Nom_formateur"=>$this->faker->firstName(),
             "Prenom_formateur"=>$this->faker->lastName(),
             "Email_formateur"=>$this->faker->email(),
@@ -22,10 +20,6 @@ class FormateurFactory extends Factory
             "Adress"=>$this->faker->address (),
             "CIN"=>$this->faker->secondaryAddress(),
             "Image"=>$this->faker->imageUrl(true, 'Faker',true),
-
-
-
-
         ];
     }
 }

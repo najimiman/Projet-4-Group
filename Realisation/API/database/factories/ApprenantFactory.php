@@ -1,10 +1,8 @@
 <?php
 
 namespace Database\Factories;
-
 use App\Models\Apprenant;
-use Illuminate\Database\Eloquent\Factories\Factory;
- 
+use Illuminate\Database\Eloquent\Factories\Factory; 
 
 class ApprenantFactory extends Factory
 {
@@ -21,7 +19,6 @@ class ApprenantFactory extends Factory
                 "CIN"=>$this->faker->secondaryAddress(),
                 "Image"=>$this->faker->imageUrl(true, 'Faker',true),
                 "Date_naissance"=>$this->faker->date(),
-    
             ];
         }
     }

@@ -14,15 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('preparation_tache', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
+
             $table->string("Nom_tache")->nullable();
             $table->string("Description")->nullable();
             $table->integer("Duree")->nullable();
 
-            $table->unsignedInteger("Preparation_brief_id")->nullable();
-            $table->foreign("Preparation_brief_id")
-            ->references("id")
-            ->on('preparation_brief')
+            $table->foreignId("Preparation_brief_id")
+            ->constrained('preparation_brief')
             ->onDelete('cascade');
         });
     }

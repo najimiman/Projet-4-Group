@@ -14,16 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('groupes_preparation_brief', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             
             $table->foreignId("Apprenant_preparation_brief_id")
             ->constrained('brief')
             ->onDelete('cascade');
 
-            $table->unsignedInteger("Groupe_id")->nullable();
-            $table->foreign("Groupe_id")
-            ->references("id")
-            ->on('groupes')
+            $table->foreignId("Groupe_id")
+            ->constrained('groupes')
             ->onDelete('cascade');
         });
     }
@@ -37,4 +35,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('groupes_preparation_brief');
     }
+    
 };

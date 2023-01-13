@@ -1,7 +1,5 @@
 <?php
-
 namespace Database\Factories;
-
 
 use App\Models\Brief;
 use App\Models\Groupes;
@@ -16,8 +14,8 @@ class GroupesPreparationBriefFactory extends Factory
     protected $model=GroupesPreparationBrief::class;
     public function definition()
     {
-        $ApprenantPreparationBrief =Brief::all()->pluck('id')->toArray();
-        $groupe =Groupes::all()->pluck('id')->toArray();
+        $ApprenantPreparationBrief = Brief::all()->pluck('id')->toArray();
+        $groupe = Groupes::all()->pluck('id')->toArray();
         return [
             "Apprenant_preparation_brief_id"=>$this->faker->randomElement($ApprenantPreparationBrief),
             "Groupe_id"=>$this->faker->randomElement($groupe),

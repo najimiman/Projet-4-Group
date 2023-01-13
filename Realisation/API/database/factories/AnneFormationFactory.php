@@ -1,18 +1,17 @@
 <?php
-
 namespace Database\Factories;
 
-use App\Models\AnneFormation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
 class AnneFormationFactory extends Factory
 {
-   
     public function definition()
     {
+        $year=$this->faker->year();
+        
         return [
-            "Annee_scolaire"=>$this->faker->year()."-".$this->faker->year()
+            "Annee_scolaire"=> ($year) ."-". ($year+1)
         ];
     }
 }

@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\Formateur;
@@ -19,6 +18,7 @@ class PreparationBriefFactory extends Factory
             "Nom_du_brief"=>$this->faker->name(),
             "Description"=>$this->faker->word() ,
             "Duree"=>$this->faker->randomNumber(1),
+
             "Formateur_id"=>$this->faker->randomElement($formateur),
         ];
     }

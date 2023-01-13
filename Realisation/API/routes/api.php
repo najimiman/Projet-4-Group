@@ -20,8 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::controller(DashboardAPIController::class)->group(function(){
-    Route::get('/group', 'years');
+    Route::get('/group', 'index');
     Route::get('/group/{id}', 'formation');
 });

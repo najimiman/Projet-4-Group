@@ -16,17 +16,13 @@ class GroupesFactory extends Factory
     public function definition()
     {
         $formateur =Formateur::all()->pluck('id')->toArray();
-
-
         $annee_formation =AnneFormation::all()->pluck('id')->toArray();
-
-
         return [
             "Nom_groupe"=>$this->faker->name(),
+            "Logo"=>$this->faker->imageUrl(true, 'Faker',true),
+
             "Annee_formation_id"=>$this->faker->randomElement($annee_formation),
             'Formateur_id'=> $this->faker->randomElement($formateur),
-
-            "Logo"=>$this->faker->imageUrl(true, 'Faker',true),
         ];
     }
 }

@@ -15,14 +15,11 @@ class GroupesApprenantFactory extends Factory
     protected $model=GroupesApprenant::class;
     public function definition()
     {
-        $apprenant =Apprenant::all()->pluck('id')->toArray();
-
-
-        $groupe =Groupes::all()->pluck('id')->toArray();
-
+        $apprenant = Apprenant::all()->pluck('id')->toArray();
+        $groupe = Groupes::all()->pluck('id')->toArray();
         return [
             "Groupe_id"=>$this->faker->randomElement($groupe),
-           "Apprenant_id"=>$this->faker->randomElement($apprenant),
+            "Apprenant_id"=>$this->faker->randomElement($apprenant),
         ];
     }
 }
